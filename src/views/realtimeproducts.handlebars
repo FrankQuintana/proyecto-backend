@@ -1,0 +1,23 @@
+<h1> Products in Real Time </h1>
+
+<div id="contProducts"></div>
+
+<h2>Formulario productos nuevos</h2>
+
+<form>
+    <input type="text" id="title" placeholder="Titulo">
+    <input type="text" id="description" placeholder="Descripción">
+    <input type="number" id="price" placeholder="Precio">
+    <select id="status">
+        <option value="true"> Activo </option>
+        <option value="false"> Inactivo </option>
+    </select>
+    <input type="text" id="thumbnails" value="sin Thumbnails">
+    <input type="text" id="code" placeholder="Codigo">
+    <input type="number" id="stock" placeholder="Stock">
+    <input type="text" id="category" placeholder="Categoria">
+    <button type="button" id="btnEnv"> Enviar </button>
+</form>
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script src="js/main.js"></script>

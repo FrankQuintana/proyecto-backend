@@ -1,0 +1,68 @@
+[
+  {
+    "id": 2,
+    "title": "indoor",
+    "description": "alimento gato adulto",
+    "price": "19000",
+    "status": true,
+    "thumbnails": [],
+    "code": "ab02",
+    "stock": 10,
+    "category": "alimento"
+  },
+  {
+    "id": 3,
+    "title": "indoor +7",
+    "description": "alimento gato adulto mayor de 7",
+    "price": "19000",
+    "status": true,
+    "thumbnails": [],
+    "code": "ab03",
+    "stock": 10,
+    "category": "alimento"
+  },
+  {
+    "id": 5,
+    "title": "castrado",
+    "description": "alimento adulto castrado",
+    "price": "21000",
+    "status": true,
+    "thumbnails": [],
+    "code": "ab05",
+    "stock": 10,
+    "category": "alimento"
+  },
+  {
+    "id": 6,
+    "title": "satiety",
+    "description": "alimento para calmar su hambre",
+    "price": "17500",
+    "status": true,
+    "thumbnails": [],
+    "code": "ab06",
+    "stock": 10,
+    "category": "alimento"
+  },
+  {
+    "title": "mini puppy",
+    "description": "alimento cachorro peque",
+    "price": "20500",
+    "thumbnails": [],
+    "code": "ab011",
+    "stock": "10",
+    "status": true,
+    "category": "alimento",
+    "id": 7
+  },
+  {
+    "title": "medium adult",
+    "description": "adulto mediano",
+    "price": "22000",
+    "thumbnails": "sin Thumbnails",
+    "code": "ab201",
+    "stock": "20",
+    "status": true,
+    "category": "alimento",
+    "id": 8
+  }
+]
