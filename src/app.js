@@ -4,7 +4,8 @@ import { Server } from "socket.io";
 import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
-import ProductManager from "./controllers/productManager.js"
+import ProductManager from "./controllers/productManager.js";
+import "./database.js";
 
 const app = express();
 const PORT = 8080;
@@ -29,7 +30,7 @@ const httpServer = app.listen(PORT, (err) => {
     console.log(`Servidor http://localhost:${PORT} en linea`);
 });
 
-const productManager = new ProductManager("./src/models/products.json");
+const productManager = new ProductManager("./src/data/products.json");
 
 const io = new Server(httpServer);
 
