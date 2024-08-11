@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 
 //lista productos carros
 router.get("/:cid", async (req, res) => {
-    const cid = parseInt(req.params.cid);
+    const cid = req.params.cid;
     try {
         const cart = await cartManager.getCartProducts(cid);
         res.json(cart.products);
@@ -39,13 +39,17 @@ router.get("/:cid", async (req, res) => {
 
 //agregar productos carro
 router.post("/:cid/product/:pid", async (req, res) => {
-    const cid = parseInt(req.params.cid);
+    const cid = req.params.cid;
     const pid = req.params.pid;
     const quantity = req.params.quantity || 1;
 
     try {
         const updateCar = await cartManager.addProductToCart(cid, pid, quantity);
-        res.json(updateCar.products);
+        if (updateCar) {
+            res.json(updateCar.products);  
+        } else {
+            res.status(404).json({ error: "carro o producto no encontrado" });
+        };
     } catch (error) {
         console.log("Error al agregar productos al carrito", error);
         res.status(500).json({error: "Error del servidor"});

@@ -1,6 +1,5 @@
 [
   {
-    "id": 2,
     "title": "indoor",
     "description": "alimento gato adulto",
     "price": "19000",
@@ -11,7 +10,6 @@
     "category": "alimento"
   },
   {
-    "id": 3,
     "title": "indoor +7",
     "description": "alimento gato adulto mayor de 7",
     "price": "19000",
@@ -22,7 +20,6 @@
     "category": "alimento"
   },
   {
-    "id": 5,
     "title": "castrado",
     "description": "alimento adulto castrado",
     "price": "21000",
@@ -33,7 +30,6 @@
     "category": "alimento"
   },
   {
-    "id": 6,
     "title": "satiety",
     "description": "alimento para calmar su hambre",
     "price": "17500",
@@ -51,8 +47,7 @@
     "code": "ab011",
     "stock": "10",
     "status": true,
-    "category": "alimento",
-    "id": 7
+    "category": "alimento"
   },
   {
     "title": "medium adult",
@@ -62,7 +57,6 @@
     "code": "ab201",
     "stock": "20",
     "status": true,
-    "category": "alimento",
-    "id": 8
+    "category": "alimento"
   }
 ]

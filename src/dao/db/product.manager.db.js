@@ -53,7 +53,7 @@ class ProductManager {
                 return search;
             };
         } catch (error) {
-            console.log("Error al leer archivo", error);
+            console.log("Error al buscar producto por ID", error);
             throw error;
         };
     };

@@ -15,15 +15,21 @@ class CartManager {
             this.carts = JSON.parse(data);
             if (this.carts.length > 0) {
                 this.ultId = Math.max(...this.carts.map(cart => cart.id));
-            }
+            };
+            return this.carts;
         } catch (error) {
             console.log("Error al cargar los carros desde el archivo", error);
             await this.savCarts();
+            return this.carts;
         };
     };
 
     async savCarts() {
-        await fs.writeFile(this.path, JSON.stringify(this.carts, null, 2));
+        try {
+            await fs.writeFile(this.path, JSON.stringify(this.carts, null, 2));
+        } catch (error) {
+            console.log("error al guardar carts", error);
+        };
     };
 
     async createCart() {
