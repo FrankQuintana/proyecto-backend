@@ -45,7 +45,7 @@
     "price": "20500",
     "thumbnails": [],
     "code": "ab011",
-    "stock": "10",
+    "stock": 10,
     "status": true,
     "category": "alimento"
   },
@@ -55,7 +55,17 @@
     "price": "22000",
     "thumbnails": "sin Thumbnails",
     "code": "ab201",
-    "stock": "20",
+    "stock": 20,
+    "status": true,
+    "category": "alimento"
+  },
+  {
+    "title": "renal",
+    "description": "ayuda con los problemas renales",
+    "price": "19500",
+    "thumbnails": "sin Thumbnails",
+    "code": "ab99",
+    "stock": 10,
     "status": true,
     "category": "alimento"
   }

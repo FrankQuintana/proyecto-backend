@@ -6,9 +6,9 @@ class CartManager {
         this.carts = [];
         this.path = path;
 
-        this.chargCarts();
+        this.chargCarts();//carga car
     };
-
+    //carga car
     async chargCarts() {
         try {
             const data = await fs.readFile(this.path, "utf-8");
@@ -23,7 +23,7 @@ class CartManager {
             return this.carts;
         };
     };
-
+    //guardar car
     async savCarts() {
         try {
             await fs.writeFile(this.path, JSON.stringify(this.carts, null, 2));
@@ -31,7 +31,7 @@ class CartManager {
             console.log("error al guardar carts", error);
         };
     };
-
+    //crea car
     async createCart() {
         const newCart = {
             id: ++this.ultId,
@@ -55,16 +55,15 @@ class CartManager {
             throw error;
         };
     };
-
+    //agrega producto
     async uploadProduct(cid, pid, quantity = 1) {
        const cart = await this.getCartProducts(cid);
        const productExist = cart.products.find(p => p.product === pid);
        if (productExist) {
             productExist.quantity += quantity;
        } else {
-            cart.products.push({product: pid, quantity});
+            cart.products.push({ product: pid, quantity });
        };
-
        await this.savCarts();
        return cart;
     };

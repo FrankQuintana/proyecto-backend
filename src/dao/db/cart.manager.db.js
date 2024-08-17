@@ -2,7 +2,7 @@ import CartModel from "../models/cart.model.js";
 
 class CartManager {
 
-    async createCart() {
+    async createCart() {//crear carro
         try {
             const newCart = new CartModel({ products: [] });
             await newCart.save();
@@ -13,12 +13,12 @@ class CartManager {
         };
     };
 
-    async getCartProducts(cid) {
+    async getCartProducts(cid) {//listar
         try {
             const cart = await CartModel.findById(cid).populate('products.product');
             if (!cart) {
                 throw new Error(`No existe cart con id ${cid}`);
-            }
+            };
             return cart;
         } catch (error) {
             console.log("Error para obtener el carro por id", error);
@@ -26,7 +26,7 @@ class CartManager {
         };
     };
 
-    async getCarts() {
+    async getCarts() {//obtener carro
         try {
             const carts = await CartModel.find();
             return carts;
@@ -35,11 +35,11 @@ class CartManager {
         };
     };
 
-    async addProductToCart(cid, pid, quantity = 1) {
+    async addProductToCart(cid, pid, quantity = 1) {//agrgar producto
         try {
             const cart = await this.getCartProducts(cid);
             const productExist = cart.products.find( item => item.product._id.toString() === pid );
-            if (!productExist) {
+            if (productExist) {
                 productExist.quantity += quantity;
             } else {
                 cart.products.push({ product: pid, quantity });
@@ -53,7 +53,7 @@ class CartManager {
         };
     };
 
-    async removeProductFromCart(cid, pid) {
+    async removeProductFromCart(cid, pid) {//eliminar
         try {
             const cart = await this.getCartProducts(cid);
             cart.products = cart.products.filter( item => item.product._id.toString() !== pid );
@@ -66,7 +66,7 @@ class CartManager {
         };
     };
 
-    async updateCart(cid, prodts) {
+    async updateCart(cid, prodts) {//actualizar carro
         try {
             const cart = await this.getCartProducts(cid);
             cart.products = prodts;
@@ -79,7 +79,7 @@ class CartManager {
         };
     };
 
-    async updateQuantity(cid, pid, quantity) {
+    async updateQuantity(cid, pid, quantity) {//act cantidad
         try {
             const cart = await this.getCartProducts(cid);
             const product = cart.products.find( item => item.product._id.toString() === pid );
@@ -97,7 +97,7 @@ class CartManager {
         };
     };
 
-    async removeAllProducts(cid) {
+    async removeAllProducts(cid) {//eliminar todo
         try {
             const cart = await this.getCartProducts(cid);
             cart.products = [];

@@ -6,7 +6,7 @@ const router = Router();
 const productManager = new ProductManager();
 const cartManager = new CartManager();
 
-router.get('/realtimeproducts', async (req, res) => {
+router.get("/realtimeproducts", async (req, res) => {
     try {
         res.render("realtimeproducts");
     } catch (error) {
@@ -31,7 +31,7 @@ router.get("/products", async (req, res) => {
     };
 });
 
-router.get('/carts/:cid', async (req, res) => {
+router.get("/carts/:cid", async (req, res) => {
     const cid = req.params.cid;
     try {
         const car = await cartManager.getCartProducts(cid);
